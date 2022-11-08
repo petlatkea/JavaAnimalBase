@@ -28,19 +28,7 @@ public class AnimalBase {
     }
 
     public void sortBy(String sortBy, SortDirection sortDirection) {
-        Comparator comparator = null;
-
-        // Depending on the sortBy (the attribute to sort by), select different comparators
-        switch (sortBy) {
-            case "name": comparator = new NameComparator();
-                break;
-            case "type": comparator = new TypeComparator();
-                break;
-            case "age": comparator = new AgeComparator();
-                break;
-            case "weight": comparator = new WeightComparator();
-                break;
-        }
+        Comparator comparator = new SuperFlexibleComparator(sortBy);
 
         animals.sort(comparator);
         System.out.println("Sorted the list of animals by: " + sortBy);
