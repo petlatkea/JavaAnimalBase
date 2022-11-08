@@ -114,6 +114,8 @@ public class UserInterface {
             application.sortBy("type", direction);
         } else if (sortBy == 'a') {
             application.sortBy("age", direction);
+        } else if (sortBy == 'w') {
+            application.sortBy("weight", direction);
         }
 
         // When sorted, show the list again
