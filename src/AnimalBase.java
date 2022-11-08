@@ -58,11 +58,14 @@ public class AnimalBase {
 
 
     public void loadDatabase() {
-        System.err.println("LOAD not yet implemented!");
+        FileHandler fileHandler = new FileHandler();
+        animals = fileHandler.loadAnimalsFromFile();
+
     }
 
-    public void saveDatabase() {
-        System.err.println("SAVE not yet implemented!");
+    public boolean saveDatabase() {
+        FileHandler fileHandler = new FileHandler();
+        return  fileHandler.saveAnimalsToFile(animals);
     }
 
 }
