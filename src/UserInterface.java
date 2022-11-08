@@ -165,9 +165,13 @@ public class UserInterface {
 
     private void save() {
         System.out.println("Saving the database ...");
-        application.saveDatabase();
-        System.out.println("Saving database completed succesfully");
-        System.out.println("You can now exit the application");
+        if( application.saveDatabase() ) {
+            System.out.println("Saving database completed succesfully");
+            System.out.println("You can now exit the application");
+        } else {
+            System.out.println("*** WARNING ***");
+            System.out.println("Could not save file - don't exit yet!!!");
+        }
     }
 
 }
